@@ -1,0 +1,35 @@
+{{yield}}
+
+<div class="col-xs-6 col-xs-offset-3">
+  <label for="" style="padding-right:6px;">{{question.author}}</label> <a href="#">{{#link-to 'question' question.id}}<label for="">{{question.content}}</label>{{/link-to}}</a>
+  <div class="well">
+    {{question.notes}}
+  </div>
+</div>
+
+{{#if showAnswerButton}}
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-8">
+      <button class="btn btn-primary" {{action 'answerButtonClicked'}}>Answer</button>
+    </div>
+  </div>
+{{/if}}
+
+{{#if showAnswerArea}}
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-4">
+      <div class="row">
+        <label for="author" style="padding-left:15px;">User Name</label>
+        <div class="row" style="padding-left:30px; padding-bottom:4px;">
+          {{input value="Annonymous" id="author"}}
+        </div>
+      </div>
+      {{textarea cols="80" rows="6" value=answer id="answer"}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-7">
+      <button class="btn btn-info" {{action 'submitAnswer'}}>Submit</button>
+    </div>
+  </div>
+{{/if}}
