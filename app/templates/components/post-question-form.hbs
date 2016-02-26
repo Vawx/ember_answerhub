@@ -1,0 +1,43 @@
+{{yield}}
+
+<div class="col-xs-6 col-xs-offset-3">
+  <div class="row">
+    <h2>Post New Question</h2>
+    <div class="well">
+      <div class="form-group">
+        <div class="container">
+          <label for="">User Name</label>
+          <div class="container">
+            {{input value=author id="author"}}
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="container">
+          <label for="">Question</label>
+          <div class="container">
+            {{input value=question id="question"}}
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="container">
+          <label for="">Details</label>
+          <div class="container">
+            {{textarea cols="80" rows="6" value=notes id="notes"}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-2 col-xs-offset-8">
+  <div class="row">
+    <div class="form-group">
+      <div class="container">
+        <button class="btn btn-info">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
