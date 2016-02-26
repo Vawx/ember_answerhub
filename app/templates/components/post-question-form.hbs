@@ -16,7 +16,7 @@
         <div class="container">
           <label for="">Question</label>
           <div class="container">
-            {{input value=question id="question"}}
+            {{input value=content id="content"}}
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
   <div class="row">
     <div class="form-group">
       <div class="container">
-        <button class="btn btn-info">Submit</button>
+        <button class="btn btn-info" {{action 'submitQuestion'}}>Submit</button>
       </div>
     </div>
   </div>
