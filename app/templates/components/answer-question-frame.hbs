@@ -1,8 +1,34 @@
 {{yield}}
 
 <div class="col-xs-6 col-xs-offset-3">
-  <label for="" style="padding-right:6px;">{{question.author}}</label> <a href="#">{{#link-to 'question' question.id}}<label for="">{{question.content}}</label>{{/link-to}}</a>
-  <div class="well">
+  <label for="" style="padding-right:6px;">{{question.author}}</label> <a href="#">{{#link-to 'question' question.id}}<label for="" id="questionContent">{{question.content}}</label>{{/link-to}}</a>
+
+  <div class="row">
+    <div class="col-xs-6">
+      {{#if showEditQuestionArea}}
+        <div class="well">
+          <div class="form-group">
+            <label for="">Question<span style="padding-left:22em;"><span class="btn btn-danger" {{action 'clearFieldsAndReset'}}>x</span></span></label>
+            <div class="form-group">
+              {{input value=questionEdit id="questionEdit"}}
+            </div>
+          </div>
+          <label for="">Details</label>
+          <div class="form-group">
+            {{textarea cols="55" rows="3" value=questionEditDetails id="questionEditDetails"}}
+          </div>
+          <div class="form-group" style="padding-left:25em;">
+            <span class="btn btn-info" {{action 'saveEditQuestion' question}}>Save</span>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+  {{#if showEditQuestion}}
+    <a href="#"{{action 'editQuestion' question}}><span class="label label-warning">Edit</span></a>
+  {{/if}}
+  <div class="well" id="questionNotes">
     {{question.notes}}
   </div>
 </div>
@@ -34,23 +60,3 @@
     </div>
   </div>
 {{/if}}
-
-<div class="row" style="padding-top:42px;">
-  <div class="col-xs-6 col-xs-offset-3">
-      <h3>Answers</h3>
-    <div class="well">
-      <ul>
-      {{#each question.answers as |answer|}}
-        <li>
-          <div class="container">
-            <span class="label label-default">{{answer.author}}</span>
-            <div class="container">
-              <p>{{answer.content}}</p>
-            </div>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
-    </div>
-  </div>
-</div>

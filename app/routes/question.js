@@ -13,6 +13,22 @@ export default Ember.Route.extend({
         return question.save( );
       });
       this.transitionTo('question', params.question);
+    },
+    saveEditQuestion( params ) {
+      this.store.findRecord('question', params.question).then( function( question ) {
+        question.set("author", question.get("author"));
+        question.set("content", params.content);
+        question.set("notes", params.notes);
+        return question.save( );
+      });
+      this.transitionTo('question', params.question);
+    },
+    submitEditAnswer( params ) {
+      this.store.findRecord('answer', params.answer).then( function( answer ) {
+        answer.set("content", params.content);
+        return answer.save( );
+      });
+      this.transitionTo('question', params.question);
     }
   }
 });
