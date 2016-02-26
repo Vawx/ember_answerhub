@@ -29,6 +29,14 @@ export default Ember.Route.extend({
         return answer.save( );
       });
       this.transitionTo('question', params.question);
+    },
+    upvote( question ) {
+      question.set("votes", question.get("votes") + 1 );
+      question.save( );
+    },
+    downvote( question ) {
+      question.set("votes", question.get("votes") - 1 );
+      question.save( );
     }
   }
 });

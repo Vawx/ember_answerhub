@@ -21,3 +21,7 @@ a:hover {
  .navbar-brand:hover {
    text-decoration: none;
  }
+
+ .glyphicon:hover {
+   color: red;
+ }

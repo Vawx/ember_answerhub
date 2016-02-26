@@ -46,13 +46,17 @@ export default Ember.Component.extend({
         notes: this.get("questionEditDetails"),
         question: this.get("question").get("id"),
       };
-      console.log(params);
       this.sendAction('saveEditQuestion', params);
       this.set("questionEdit", "");
       this.set('questionEditDetails', "")
       this.set("showEditQuestionArea", false);
       this.set("showEditQuestion", true);
+    },
+    upvote( question ) {
+      this.sendAction('upvote', question);
+    },
+    downvote( question ) {
+      this.sendAction('downvote', question);
     }
-
   }
 });
