@@ -1,7 +1,27 @@
 # Answerhub
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Answer board application using Ember.
+
+## Rules
+
+###Create a question and answer message board where a user submits a question and other users can respond with answers.
+
+1. Questions should have the content of the question itself, an author and additional notes.
+2. Answers should have the content of the answer and the author.
+3. Include a header and/or navbar that appears on all pages containing the name of your site and a link to the home page.
+4. List all questions on the homepage, with only the question and the name of the author showing.
+5. Users should be able to click on a question to view additional information.
+6. Allow users to add and edit questions.
+7. Allow users to add answers to a question. Answers should be added and viewed on the same page as the question they respond to.
+8. Further exploration
+
+###If you have completed the objectives for the code review, consider adding some additional features:
+
+1. Include a time and/or date property on questions and answers. Use a helper to format them nicely.
+2. Include additional custom helpers.
+3. Add custom styling.
+4. Implement upvote/downvote functionality so that users may vote on answers.
+5. Add tags to questions.
 
 ## Prerequisites
 
@@ -50,4 +70,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
