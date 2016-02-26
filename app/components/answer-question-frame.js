@@ -8,20 +8,25 @@ export default Ember.Component.extend({
       this.set("showAnswerArea", true);
       this.set("showAnswerButton", false);
     },
-    closeAnswerArea( ) {
-      this.set("answer", ""),
-      this.set("content", ""),
-      this.set("showAnswerArea", false);
-      this.set("showAnswerButton", true);
-    },
     submitAnswer( ) {
+      var author = this.get("author");
+      if( author === "" || author == undefined ) { author = "Annonymous" };
       var params = {
-        content: this.get("answer"),
-        author: this.get("content"),
+        content: this.get("content"),
+        author: author,
+        question: this.get('question'),
       };
       this.sendAction('submitAnswer', params);
+      this.set("content", ""),
+      this.set("author", ""),
       this.set("showAnswerArea", false);
       this.set("showAnswerButton", true);
     },
+    clearFieldsAndReset( ) {
+      this.set("content", ""),
+      this.set("author", ""),
+      this.set("showAnswerArea", false);
+      this.set("showAnswerButton", true);
+    }
   }
 });
