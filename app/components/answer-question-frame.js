@@ -17,6 +17,7 @@ export default Ember.Component.extend({
         content: this.get("content"),
         author: author,
         question: this.get('question'),
+        votes: 0,
       };
       this.sendAction('submitAnswer', params);
       this.set("content", ""),

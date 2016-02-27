@@ -37,6 +37,14 @@ export default Ember.Route.extend({
     downvote( question ) {
       question.set("votes", question.get("votes") - 1 );
       question.save( );
+    },
+    answerUpvote( answer ) {
+      answer.set("votes", answer.get("votes") + 1 );
+      answer.save( );
+    },
+    answerDownvote( answer ) {
+      answer.set("votes", answer.get("votes") - 1 );
+      answer.save( );
     }
   }
 });

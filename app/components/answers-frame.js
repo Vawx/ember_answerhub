@@ -24,6 +24,12 @@ export default Ember.Component.extend({
       this.set("showEditAnswer", false);
       this.set("answerEditDetails", "");
       this.set("editAnswerID", "");
+    },
+    answerDownvote( answer ) {
+      this.sendAction('answerDownvote', answer);
+    },
+    answerUpvote( answer ) {
+      this.sendAction('answerUpvote', answer);
     }
   }
 });
